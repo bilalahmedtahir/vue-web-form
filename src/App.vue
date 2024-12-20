@@ -1,20 +1,32 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <nav>
+    <RouterLink to="/">SignUp</RouterLink>  | 
+    <RouterLink to="/about">About</RouterLink> |
+    <RouterLink to="/home">Home</RouterLink>
+  </nav>
+  <main>
+    <RouterView />
+  </main>
+
+  <button @click="redirect">Redirect to Home</button>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+  },
+  methods:{
+    redirect(){
+      this.$router.push({name:"home"})
+    }
   }
 }
 </script>
 
 <style>
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -22,5 +34,9 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+body {
+  margin: 0;
+  background: #eee;
 }
 </style>
