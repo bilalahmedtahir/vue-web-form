@@ -1,21 +1,26 @@
 <template>
-  <nav>
+  <!-- <nav>
     <RouterLink to="/">SignUp</RouterLink>  | 
     <RouterLink to="/about">About</RouterLink> |
     <RouterLink to="/home">Home</RouterLink>
-  </nav>
+  </nav> -->
   <main>
-    <RouterView />
+    <!-- <RouterView /> -->
+    <ProductListOne :products="products"></ProductListOne>
+
   </main>
 
   <button @click="redirect">Redirect to Home</button>
 </template>
 
 <script>
+import ProductListOne from './components/ProductListOne.vue';
+
 
 export default {
   name: 'App',
   components: {
+    ProductListOne
   },
   methods:{
     redirect(){
